@@ -2,13 +2,13 @@
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#1b3c6c">
-<title>Stage 0</title>
+<title>Minimum Viable Foundations</title>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="icons/icon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="description" content="Stage 0 · Minimum Viable Foundations tracker.">
+<meta name="description" content="Minimum Viable Foundations: stages, phases and sub-phases tracker.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&amp;family=Comfortaa:wght@500;600;700&amp;family=Nunito:wght@400;600;700;800&amp;family=Cormorant+Garamond:wght@500&amp;family=Manrope:wght@400;600&amp;display=swap" rel="stylesheet">
 <style>
@@ -263,11 +263,15 @@ textarea{min-height:120px;resize:vertical;line-height:1.5}
 .tgl{display:flex;align-items:center;gap:12px;padding:12px 14px;margin:8px 0;background:var(--row);border-radius:16px;border:1px solid var(--hair)}
 .tgl span{flex:1;font-weight:var(--fw-m)}.tgl input{width:22px;height:22px;accent-color:var(--cx)}
 .btns select{max-width:100%;min-width:0;flex:1 1 180px}
+.crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:5px;margin-top:8px}
+.cr{border:1px solid var(--hair2);background:var(--ctrl);border-radius:14px;padding:5px 11px;font-size:13px;font-weight:var(--fw-m);color:var(--mu);font-family:var(--font)}
+.cr.on{color:var(--tx);border-color:color-mix(in srgb,var(--cx) 60%,transparent);background:color-mix(in srgb,var(--cx) 16%,transparent)}
+.csep{color:var(--mu);font-size:13px}
 .hist{width:100%;height:70px;display:block;margin:6px 0}
 </style></head><body>
 <div id="bgpat" aria-hidden="true"></div>
 <header class="top"><div class="tin">
- <div class="r1"><div style="flex:1;min-width:0"><div class="brand" id="ttl">Stage 0</div><div class="sub2" id="stl"></div></div></div>
+ <div class="r1"><div style="flex:1;min-width:0"><div class="brand" id="ttl">Stage 0</div><div class="crumbs" id="crumbs"></div></div></div>
  <div class="stabs" id="stabs"></div>
 </div></header>
 <main id="main"></main>
@@ -287,36 +291,57 @@ const G=(id,label,o={})=>Object.assign({id,label,type:'check',done:false,cur:0,n
 const M=(id,label,t)=>G(id,label,{type:'money',target:t});
 const SEED={"phases": [{"id": "p0", "color": "--c0", "name": "Stage 0.0 \u2013 Phase 0", "sub": "Minimum independence setup", "items": [{"id": "a1", "label": "24/7 workspace", "type": "check", "done": false, "cur": 0, "note": ""}, {"id": "a6", "label": "Hussle", "type": "check", "done": false, "cur": 0, "note": "Gym & sauna pass for multiple gyms, via Hussle.com"}, {"id": "a2", "label": "Business accounts", "type": "money", "done": false, "cur": 0, "note": "", "target": 2000}, {"id": "a3", "label": "Personal accounts", "type": "money", "done": false, "cur": 0, "note": "", "target": 2000}, {"id": "a4", "label": "Shared vehicle converted for sleep", "type": "check", "done": false, "cur": 0, "note": ""}, {"id": "a7", "label": "Passport renewed", "type": "check", "done": false, "cur": 0, "note": ""}, {"id": "a5", "label": "Health & wellbeing and clothing purchases made", "type": "check", "done": false, "cur": 0, "note": ""}, {"id": "x1794697051503", "label": "Trading & investment accounts", "type": "money", "done": false, "cur": 0, "note": "", "target": 500}]}, {"id": "p1", "color": "--c1", "name": "Stage 0.0 \u2013 Phase 1", "sub": "Own vehicle", "items": [{"id": "b2", "label": "Own vehicle & healthy sleeping setup, insurance & tax", "type": "check", "done": false, "cur": 0, "note": ""}, {"id": "x1794697675815", "label": "Business accounts", "type": "money", "done": false, "cur": 0, "note": "", "target": 3000}, {"id": "x1794756460544", "label": "Personal accounts", "type": "money", "done": false, "cur": 0, "note": "", "target": 1500}]}, {"id": "p2", "color": "--c2", "name": "Stage 0.0 \u2013 Phase 2", "sub": "Gym & sauna upgrade", "items": [{"id": "c1", "label": "Corporate Hussle", "type": "check", "done": false, "cur": 0, "note": ""}]}, {"id": "p3", "color": "--c3", "name": "Stage 0.0 \u2013 Phase 3", "sub": "Self-contained office & reserves", "items": [{"id": "d1", "label": "24/7 self-contained office paid up for 3 months", "type": "check", "done": false, "cur": 0, "note": ""}, {"id": "d2", "label": "Business accounts", "type": "money", "done": false, "cur": 0, "note": "", "target": 10000}, {"id": "d3", "label": "Personal accounts", "type": "money", "done": false, "cur": 0, "note": "", "target": 6000}, {"id": "d4", "label": "Trading & investment accounts", "type": "money", "done": false, "cur": 0, "note": "", "target": 4000}, {"id": "d5", "label": "Sent to Mum", "type": "money", "done": false, "cur": 0, "note": "", "target": 2000}]}], "lanes": [{"id": "li", "color": "--c0", "name": "i)", "sub": "Vehicle, office & basics", "items": [{"id": "i1", "label": "Shared vehicle fixed & converted for sleep", "type": "check", "done": false, "cur": 0, "note": ""}, {"id": "i2", "label": "Business accounts", "type": "money", "done": false, "cur": 0, "note": "", "target": 500}, {"id": "i3", "label": "Personal accounts", "type": "money", "done": false, "cur": 0, "note": "", "target": 500}, {"id": "i4", "label": "24/7 office paid til end of year", "type": "check", "done": false, "cur": 0, "note": ""}, {"id": "i5", "label": "Basic Hussle monthly pass", "type": "check", "done": false, "cur": 0, "note": ""}, {"id": "i6", "label": "Minimum supplement stack", "type": "check", "done": false, "cur": 0, "note": ""}, {"id": "i7", "label": "Dark baggy trousers, white t-shirt, denim shirt & black cardigan", "type": "check", "done": false, "cur": 0, "note": ""}, {"id": "x1794411688310", "label": "Travel to office arranged", "type": "check", "done": false, "cur": 0, "note": ""}, {"id": "x1794677010650", "label": "Electric Piano", "type": "money", "done": false, "cur": 0, "note": "", "target": 200}, {"id": "x1795010391641", "label": "Writing Tablet", "type": "check", "done": false, "cur": 0, "note": ""}]}, {"id": "lii", "color": "--c1", "name": "ii)", "sub": "Storage, supplements & air", "items": [{"id": "j1", "label": "Business accounts", "type": "money", "done": false, "cur": 0, "note": "", "target": 1000}, {"id": "j2", "label": "Personal accounts", "type": "money", "done": false, "cur": 0, "note": "", "target": 1000}, {"id": "j3", "label": "Storagemart storage paid up & cleared out", "type": "check", "done": false, "cur": 0, "note": ""}, {"id": "j4", "label": "Better Hussle monthly pass", "type": "check", "done": false, "cur": 0, "note": ""}, {"id": "j5", "label": "Full supplement stack", "type": "check", "done": false, "cur": 0, "note": ""}, {"id": "j6", "label": "CO2 monitor", "type": "check", "done": false, "cur": 0, "note": ""}]}, {"id": "liii", "color": "--c2", "name": "iii)", "sub": "Comfort & documents", "items": [{"id": "k1", "label": "Business accounts", "type": "money", "done": false, "cur": 0, "note": "", "target": 1500}, {"id": "k2", "label": "Personal accounts", "type": "money", "done": false, "cur": 0, "note": "", "target": 1500}, {"id": "k3", "label": "Continental quilt", "type": "check", "done": false, "cur": 0, "note": ""}, {"id": "k4", "label": "Passport renewed", "type": "check", "done": false, "cur": 0, "note": ""}]}, {"id": "liv", "color": "--c3", "name": "iv)", "sub": "Cash reserves", "items": [{"id": "m1", "label": "Business accounts", "type": "money", "done": false, "cur": 0, "note": "", "target": 2000}, {"id": "m2", "label": "Personal accounts", "type": "money", "done": false, "cur": 0, "note": "", "target": 2000}]}], "ctx": [["Stage 0.1", [">\u00a310k net during past month across multiple profit streams", ">\u00a34,000 to Mum", "Camper-van & healthy sleeping setup, insurance & tax"]], ["Stage 0.2", [">\u00a320k net during past month across multiple profit streams", "\u00a38,000 & systems capable of >\u00a32.5k net per month to Mum", "UK property owned personally, bought with loan collateralised against assets"]], ["Stage 0.3", ["Profit streams produced >\u00a330k net during previous month", "\u00a312,000 & systems capable of >\u00a35k net per month to Mum", "Larger office setup, providing a UK residential address", "Excellent dental, oral & periodontal health and general health & fitness"]]]};
 const ROLL={a1:['i4','x1794411688310'],a6:['i5','j4'],a4:['i1'],a7:['k4'],a5:['i6','i7','j5','j6','k3']};
-const DEF=Object.assign(clone(SEED),{v:1,schema:2,title:'Stage 0',subtitle:'Minimum Viable Foundations',exit:['a7','b2','c1','d1','d2','d3','d4','d5'],links:[],rollup:clone(ROLL),reached:{},hist:{}});
-{const iv=DEF.lanes.find(g=>g.id==='liv');if(iv&&!iv.items.some(i=>i.id==='m3'))iv.items.push(M('m3','Trading & investment accounts',500))}
+const DEF0=Object.assign(clone(SEED),{v:1,schema:2,title:'Minimum Viable Foundations',subtitle:'',exit:['a7','b2','c1','d1','d2','d3','d4','d5'],links:[],rollup:clone(ROLL),reached:{},hist:{}});
+{const iv=DEF0.lanes.find(g=>g.id==='liv');if(iv&&!iv.items.some(i=>i.id==='m3'))iv.items.push(M('m3','Trading & investment accounts',500))}
 
 /* ---------- state ---------- */
 const ymd=d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
 const today=()=>ymd(new Date());
 const key=l=>String(l||'').trim().toLowerCase();
 const LSK='stage0-v2';
+const ROMAN=['i)','ii)','iii)','iv)','v)','vi)','vii)','viii)','ix)','x)','xi)','xii)'];
 let S=null;
-function norm(x){if(!x||!x.phases||!x.lanes)throw 0;const d=clone(DEF);
- for(const k of ['ctx','exit','links','hist','title','subtitle','reached'])if(x[k]==null)x[k]=clone(d[k]);
- [...x.lanes,...x.phases].forEach(g=>{g.items=g.items||[];g.items.forEach(i=>{if(i.type==='money'&&!(+i.target>0))i.target=1;i.cur=+i.cur||0})});
- const has=id=>[...x.lanes,...x.phases].some(g=>g.items.some(i=>i.id===id));
- if(x.schema!==2){
+function norm(x){if(!x||!x.phases||!x.lanes)throw 0;const d=clone(DEF0);
+ for(const k of ['exit','links','hist','reached'])if(x[k]==null)x[k]=clone(d[k]);
+ const groups=()=>[...x.lanes,...x.phases,...(x.stages||[])];
+ groups().forEach(g=>{g.items=g.items||[];g.items.forEach(i=>{if(i.type==='money'&&!(+i.target>0))i.target=1;i.cur=+i.cur||0})});
+ const has=id=>groups().some(g=>g.items.some(i=>i.id===id));
+ if((x.schema||0)<2){
   const iv=x.lanes.find(g=>g.id==='liv');
-  if(iv&&!has('m3')){const tr=[...x.lanes,...x.phases].flatMap(g=>g.items).find(i=>i.type==='money'&&key(i.label)==='trading & investment accounts');const m=M('m3','Trading & investment accounts',500);m.cur=tr?+tr.cur||0:0;iv.items.push(m)}
+  if(iv&&!has('m3')){const tr=groups().flatMap(g=>g.items).find(i=>i.type==='money'&&key(i.label)==='trading & investment accounts');const m=M('m3','Trading & investment accounts',500);m.cur=tr?+tr.cur||0:0;iv.items.push(m)}
   if(has('c1')&&!x.exit.includes('c1')){const at=x.exit.indexOf('d1');x.exit.splice(at<0?x.exit.length:at,0,'c1')}
   if(!x.rollup){x.rollup={};for(const p in ROLL)if(has(p)){const k=ROLL[p].filter(has);if(k.length)x.rollup[p]=k}}
   x.links=(x.links||[]).filter(([a,b])=>!(a==='a7'&&b==='k4'));
   x.schema=2}
+ if(x.schema<3){
+  // Stage > Phase > Sub-phase: existing phases belong to Stage 0.0, existing sub-phases to its first phase.
+  const ctx=x.ctx||[];
+  x.stages=[{id:'s00',name:'Stage 0.0',sub:'',color:'--cx',items:[]},
+   ...ctx.map(([n,a],ix)=>({id:'s0'+(ix+1),name:n,sub:'',color:['--c4','--c1','--c6','--c5'][ix%4],items:a.map(t=>G(nid(),t))}))];
+  const p0=x.phases[0];
+  x.phases.forEach(p=>{p.stage='s00';p.name=String(p.name||'').replace(/^Stage\s*0\.0\s*[–-]\s*/i,'')||p.name});
+  x.lanes.forEach(l=>{l.phase=p0?p0.id:null});
+  delete x.ctx;
+  if(!x.title||x.title==='Stage 0')x.title='Minimum Viable Foundations';
+  x.subtitle='';
+  x.schema=3}
  if(!x.rollup)x.rollup={};
- [...x.lanes,...x.phases].forEach(g=>g.items.forEach(i=>{if(i.type==='money'&&i.cur>=i.target&&!x.reached[i.id])x.reached[i.id]=today()}));
+ if(!x.stages.length)x.stages.push({id:'s00',name:'Stage 0.0',sub:'',color:'--cx',items:[]});
+ x.phases.forEach(p=>{if(!x.stages.some(s=>s.id===p.stage))p.stage=x.stages[0].id});
+ x.lanes.forEach(l=>{if(!x.phases.some(p=>p.id===l.phase))l.phase=x.phases[0]?x.phases[0].id:null});
+ groups().forEach(g=>g.items.forEach(i=>{if(i.type==='money'&&i.cur>=i.target&&!x.reached[i.id])x.reached[i.id]=today()}));
  return x}
+const DEF=norm(clone(DEF0));
 try{S=norm(JSON.parse(localStorage.getItem(LSK)||'null'))}catch(e){S=null}
 if(!S)S=clone(DEF);
 let ui={view:'lanes',theme:'sky',size:'std',pat:'flower'};
 try{Object.assign(ui,JSON.parse(localStorage.getItem('stage0-ui')||'{}'))}catch(e){}
-ui.view='lanes';
-const saveUI=()=>{try{localStorage.setItem('stage0-ui',JSON.stringify(ui))}catch(e){}};
+// Every launch opens on the first stage's first phase, first sub-phase.
+ui.view='lanes';ui.st=null;ui.ph=null;ui.sb=null;
+const ALL={};
+const saveUI=()=>{try{const o=Object.assign({},ui);delete o.st;delete o.ph;delete o.sb;localStorage.setItem('stage0-ui',JSON.stringify(o))}catch(e){}};
 const save=()=>{S.ts=Date.now();try{localStorage.setItem(LSK,JSON.stringify(S))}catch(e){}};
+
 
 /* ---------- themes & patterns ---------- */
 const THEMES=[['sky','Sky','Lighter blue, mint & gold','#1b3c6c','#f4f8ff',['#8ff0d6','#c9c4ff','#ffe49c','#ffadb2','#a9dcff']],
@@ -349,10 +374,19 @@ function setPat(p){ui.pat=p;saveUI();drawPat();render()}
 /* ---------- logic ---------- */
 const pd=s=>{const a=s.split('-').map(Number);return new Date(a[0],a[1]-1,a[2])};
 const short=s=>pd(s).toLocaleDateString('en-GB',{day:'numeric',month:'short'});
-const allG=()=>[...S.lanes,...S.phases];
+const allG=()=>[...S.lanes,...S.phases,...S.stages];
 const grp=id=>allG().find(g=>g.id===id);
 const sn=g=>String(g.name||'').replace(/^Stage\s*0\.0\s*[–-]\s*/i,'')||g.name;
-const kindOf=g=>S.lanes.includes(g)?'lanes':'phases';
+const kindOf=g=>S.stages.includes(g)?'stages':S.phases.includes(g)?'phases':'lanes';
+const phasesOf=st=>S.phases.filter(p=>p.stage===st.id);
+const subsOf=ph=>S.lanes.filter(l=>l.phase===ph.id);
+function stageOf(g){const k=kindOf(g);if(k==='stages')return g;if(k==='phases')return grp(g.stage)||S.stages[0];const ph=grp(g.phase);return ph?stageOf(ph):S.stages[0]}
+const parentPh=g=>kindOf(g)==='lanes'?grp(g.phase):null;
+const sibs=g=>{const k=kindOf(g);return k==='stages'?S.stages:k==='phases'?S.phases.filter(p=>p.stage===g.stage):S.lanes.filter(l=>l.phase===g.phase)};
+// Full label, e.g. "Stage 0.0 · Phase 0 · iii)"; rel() drops the stage.
+function crumb(g){const k=kindOf(g),st=stageOf(g);if(k==='stages')return g.name;if(k==='phases')return `${st.name} · ${sn(g)}`;const ph=parentPh(g);return `${st.name} · ${ph?sn(ph):''} · ${g.name}`}
+function rel(g){const k=kindOf(g);if(k==='stages')return g.name;if(k==='phases')return sn(g);const ph=parentPh(g);return `${ph?sn(ph)+' · ':''}${g.name}`}
+const levelName={stages:'Stage',phases:'Phase',lanes:'Sub-phase'};
 function findItem(id){for(const g of allG()){const it=g.items.find(i=>i.id===id);if(it)return [g,it]}return null}
 const itemOf=(gid,iid)=>grp(gid).items.find(i=>i.id===iid);
 const kidsOf=it=>((S.rollup||{})[it.id]||[]).map(findItem).filter(Boolean);
@@ -364,12 +398,14 @@ function prog(i){if(i.type==='money')return S.reached&&S.reached[i.id]?1:Math.mi
 function latch(){let ch=false;allG().forEach(g=>g.items.forEach(i=>{if(i.type==='money'&&i.cur>=i.target&&!S.reached[i.id]){S.reached[i.id]=today();ch=true}}));return ch}
 const sec=a=>a.length?a.reduce((s,i)=>s+prog(i),0)/a.length:0;
 const peers=it=>allG().flatMap(g=>g.items.filter(i=>i.type==='money'&&key(i.label)===key(it.label)).map(i=>[g,i]));
-const exitList=()=>S.exit.map(findItem).filter(Boolean);
-const exitPct=()=>sec(exitList().map(x=>x[1]));
+// A stage's exit criteria: items flagged inside its phases and sub-phases, plus the stage's own criteria.
+function stageExit(st){const linked=S.exit.map(findItem).filter(x=>x&&x[0]!==st&&kindOf(x[0])!=='stages'&&stageOf(x[0])===st);return [...linked,...st.items.map(i=>[st,i])]}
+const exitPct=st=>sec(stageExit(st).map(x=>x[1]));
+const stageItems=st=>[...phasesOf(st).flatMap(p=>[...subsOf(p),p]),st].flatMap(g=>g.items);
 const buzz=()=>{try{navigator.vibrate&&navigator.vibrate(8)}catch(e){}};
 let tt;function toast(t){const e=$('toast');e.textContent=t;e.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>e.classList.remove('on'),2200)}
 function completedGroups(){return new Set(allG().filter(g=>g.items.length&&sec(g.items)>=1).map(g=>g.id))}
-function celebrate(before){const after=completedGroups();for(const id of after)if(!before.has(id)){const g=grp(id);toast(`${g.name} complete · ${g.sub}`);buzz();setTimeout(buzz,160);return}}
+function celebrate(before){const after=completedGroups();for(const id of after)if(!before.has(id)){const g=grp(id);toast(`${crumb(g)} complete`);buzz();setTimeout(buzz,160);return}}
 function setBal(label,v){v=Math.max(0,Math.round((+v||0)*100)/100);const before=completedGroups();
  allG().forEach(g=>g.items.forEach(i=>{if(i.type==='money'&&key(i.label)===key(label))i.cur=v}));
  latch();
@@ -379,55 +415,75 @@ function toggleDone(it){const before=completedGroups();it.done=!it.done;
  (S.links||[]).forEach(([a,b])=>{if(it.id===a||it.id===b){[a,b].forEach(x=>{const f=findItem(x);if(f)f[1].done=it.done})}});
  save();if(it.done){buzz();popId=it.id}celebrate(before)}
 
+/* ---------- navigation context ---------- */
+function ctx(){let st=grp(ui.st);if(!st||kindOf(st)!=='stages')st=S.stages[0];
+ const phs=phasesOf(st);let ph=grp(ui.ph);if(!ph||kindOf(ph)!=='phases'||ph.stage!==st.id)ph=phs[0]||null;
+ const sbs=ph?subsOf(ph):[];let sb=grp(ui.sb);if(!sb||kindOf(sb)!=='lanes'||!ph||sb.phase!==ph.id)sb=sbs[0]||null;
+ ui.st=st.id;ui.ph=ph?ph.id:null;ui.sb=sb?sb.id:null;return {st,ph,sb,phs,sbs}}
+function goTo(gid){const g=grp(gid);if(!g)return;const k=kindOf(g);ALL[k]=false;
+ if(k==='stages'){ui.st=g.id}else if(k==='phases'){ui.st=g.stage;ui.ph=g.id}else{const ph=parentPh(g);ui.ph=ph&&ph.id;ui.st=ph&&ph.stage;ui.sb=g.id}
+ ui.view=k;saveUI();render();scrollTo(0,0)}
+
 /* ---------- render pieces ---------- */
 function ring(p,size,gid){const o=263.9*(1-p);return `<svg width="${size}" height="${size}" viewBox="0 0 100 100" style="flex:none;filter:drop-shadow(0 0 calc(14px*var(--glow)) color-mix(in srgb,var(--cx) 30%,transparent))"><defs><linearGradient id="${gid}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" style="stop-color:var(--ring1)"/><stop offset="1" style="stop-color:var(--ring2)"/></linearGradient></defs><circle cx="50" cy="50" r="42" fill="none" style="stroke:var(--track)" stroke-width="9"/><circle cx="50" cy="50" r="42" fill="none" stroke="url(#${gid})" stroke-width="9" stroke-linecap="round" stroke-dasharray="263.9" stroke-dashoffset="${o}" transform="rotate(-90 50 50)" style="transition:stroke-dashoffset .6s"/><text x="50" y="58.5" text-anchor="middle" style="fill:var(--tx);font-family:var(--font-h);font-weight:var(--wn);font-size:calc(23px*var(--hs))">${pc(p)}</text></svg>`}
 function mRing(p){const o=75.4*(1-p);return `<svg class="mr" viewBox="0 0 28 28"><circle cx="14" cy="14" r="12" fill="none" style="stroke:var(--track)" stroke-width="3.2"/><circle cx="14" cy="14" r="12" fill="none" style="stroke:var(--c)" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="75.4" stroke-dashoffset="${o}" transform="rotate(-90 14 14)" opacity="${p?1:0}"/></svg>`}
-let popId=null,single=false;
+let popId=null;
 function row(g,it,showGroup){const p=prog(it),money=it.type==='money',ex=S.exit.includes(it.id),rd=S.reached[it.id];
- const meta=[];if(showGroup)meta.push(`<span class="gtag" style="--c:var(${g.color})">${esc(sn(g))}</span>`);
+ const meta=[];if(showGroup&&kindOf(g)!=='stages')meta.push(`<span class="gtag" style="--c:var(${g.color})">${esc(rel(g))}</span>`);
  if(money)meta.push(rd?`<span>Reached ${short(rd)}${it.cur<it.target?` · now ${fm(it.cur)}`:''}</span>`:`<span>${fm(it.cur)} of ${fm(it.target)}</span>`,rd?'':`<span>${pc(p)}</span>`);
  if(isRolled(it)){const k=kidsOf(it);meta.push(`<span>${k.filter(x=>prog(x[1])>=1).length}/${k.length} from sub-phases</span>`)}
- if(!showGroup&&S.lanes.includes(g)){const pa=parentsOf(it.id);if(pa.length)meta.push(`<span class="gtag" style="--c:var(${pa[0][0].color})">→ ${esc(pa.map(x=>x[1].label).join(', '))}</span>`)}
- if(ex&&!showGroup)meta.push('<span class="badge">Exit criterion</span>');
+ if(!showGroup&&kindOf(g)==='lanes'){const pa=parentsOf(it.id);if(pa.length)meta.push(`<span class="gtag" style="--c:var(${pa[0][0].color})">→ ${esc(pa.map(x=>x[1].label).join(', '))}</span>`)}
+ if(ex&&!showGroup)meta.push(`<span class="badge">${esc(stageOf(g).name)} exit</span>`);
  const lead=money&&p<1?mRing(p):'<span class="ck"></span>';
  return `<div class="row ${p>=1?'d':''}${popId===it.id?' pop':''}" style="--c:var(${g.color})" onclick="tapI('${g.id}','${it.id}')">${lead}<div class="lbw"><div class="lb">${esc(it.label)}</div>${meta.length?`<div class="meta">${meta.join('')}</div>`:''}</div><button class="mo" aria-label="Edit" onclick="event.stopPropagation();editI('${g.id}','${it.id}')">⋯</button>${money&&p<1&&p>0?`<span class="f" style="width:${p*100}%"></span>`:''}</div>`}
-function gCard(g){const p=sec(g.items),lane=S.lanes.includes(g);
- return `<section class="card" style="--c:var(${g.color})"><div class="ch" style="cursor:default"><div style="flex:1;min-width:0"><div class="tag">${lane?'Phase 0 · Sub-phase '+esc(g.name):'Stage 0.0 · '+esc(sn(g))}</div><div class="nm">${esc(g.sub)}</div></div><span class="p">${pc(p)}</span></div><div class="bar"><i style="width:${p*100}%"></i></div>${g.items.map(i=>row(g,i)).join('')}<button class="row add" onclick="openGroup('${g.id}')">＋ Add / edit</button></section>`}
-function ovRows(list,view){return list.map(g=>{const p=sec(g.items);return `<div class="ov" style="--c:var(${g.color})" onclick="jump('${view}','${g.id}')"><div class="ow"><div class="ot">${esc(sn(g))} <span class="os">· ${esc(g.sub)}</span></div><div class="rb"><i style="width:${p*100}%;background:var(${g.color})"></i></div></div><b>${pc(p)}</b></div>`}).join('')}
+function gCard(g){const p=sec(g.items);
+ return `<section class="card" style="--c:var(${g.color})"><div class="ch" style="cursor:default"><div style="flex:1;min-width:0"><div class="tag">${esc(crumb(g))}</div><div class="nm">${esc(g.sub||levelName[kindOf(g)])}</div></div><span class="p">${pc(p)}</span></div><div class="bar"><i style="width:${p*100}%"></i></div>${g.items.map(i=>row(g,i)).join('')||'<div class="empty" style="padding:14px">No items yet.</div>'}<button class="row add" onclick="openGroup('${g.id}')">＋ Add / edit</button></section>`}
+function ovRows(list){return list.map(g=>{const p=sec(g.items);return `<div class="ov" style="--c:var(${g.color})" onclick="goTo('${g.id}')"><div class="ow"><div class="ot">${esc(kindOf(g)==='lanes'?g.name:sn(g))} <span class="os">· ${esc(g.sub||'')}</span></div><div class="rb"><i style="width:${p*100}%;background:var(${g.color})"></i></div></div><b>${pc(p)}</b></div>`}).join('')}
+function emptyCard(c,title,text,btn,act){return `<section class="card" style="--c:var(${c})"><div class="tag">Not set up yet</div><div class="nm" style="margin-bottom:6px">${esc(title)}</div><p class="hint">${text}</p><button class="bb" style="width:100%;margin-top:8px" onclick="${act}">${btn}</button></section>`}
+function subsCard(ph){const sbs=subsOf(ph);
+ return `<section class="card" style="--c:var(${ph.color})"><div class="tag">${esc(crumb(ph))}</div><div class="nm" style="margin-bottom:4px">Sub-phases</div>${sbs.length?ovRows(sbs):`<p class="hint">Not broken down yet. Sub-phases i), ii)… are smaller steps that build up to ${esc(sn(ph))}'s items.</p>`}<button class="row add" onclick="addGroup('lanes','${ph.id}')">＋ ${sbs.length?'Add sub-phase '+(ROMAN[sbs.length]||''):'Break into sub-phases'}</button></section>`}
+function exitCard(st){const ex=stageExit(st),ep=exitPct(st);
+ return `<section class="card" style="--c:var(${st.color})"><div class="ch" style="cursor:default"><div style="flex:1"><div class="tag">${esc(st.name)}</div><div class="nm">Exit criteria</div></div><span class="p">${pc(ep)}</span></div><div class="bar"><i style="width:${ep*100}%"></i></div>${ex.map(([g,i])=>row(g,i,true)).join('')||'<div class="empty" style="padding:14px">No exit criteria yet.</div>'}
+ <button class="row add" onclick="openGroup('${st.id}')">＋ Add exit criterion</button><p class="hint" style="margin-top:8px">Criteria can be added here directly, or flagged from any phase or sub-phase item via ⋯ → "${esc(st.name)} exit criterion".</p></section>`}
 
 /* ---------- views ---------- */
-function vHome(){
- const ex=exitList(),dn=ex.filter(x=>prog(x[1])>=1).length,ep=exitPct();
- const lanesP=sec(S.lanes.flatMap(l=>l.items)),phP=sec(S.phases.flatMap(l=>l.items));
- const hero=`<section class="card hero" style="--c:var(--c0)">${seedOfLife()}${ring(ep,108,'gr')}<div><div class="tag">Stage 0.0</div><div class="big">${dn} of ${ex.length}</div><div class="hint">exit criteria met</div><div class="hint" style="margin-top:6px">Sub-phases ${pc(lanesP)} · Phases ${pc(phP)}</div></div></section>`;
- const sum=hero+`<section class="card" style="--c:var(--c0)"><div class="tag">Phase 0</div><div class="nm" style="margin-bottom:4px">Sub-phases</div>${ovRows(S.lanes,'lanes')}</section><section class="card" style="--c:var(--c1)"><div class="tag">Stage 0.0</div><div class="nm" style="margin-bottom:4px">Phases</div>${ovRows(S.phases,'phases')}</section>`;
- const nexts=[];allG().forEach(g=>{const i=g.items.find(x=>prog(x)<1);if(i)nexts.push([g,i])});
- const next=`<section class="card" style="--c:var(--c2)"><div class="tag">Up next</div><div class="nm" style="margin-bottom:4px">First open item in each group</div>${nexts.length?nexts.map(([g,i])=>row(g,i,true)).join(''):'<div class="empty">Everything is complete.</div>'}</section>`;
+function vLanes(){const c=ctx();
+ if(!c.ph)return {secs:[],body:emptyCard(c.st.color,`${c.st.name} has no phases yet`,'Phases are the main steps of a stage. Add one, then break it into sub-phases.',`＋ Add Phase 0 to ${esc(c.st.name)}`,`addGroup('phases','${c.st.id}')`)};
+ if(!c.sbs.length)return {secs:[],body:emptyCard(c.ph.color,`${crumb(c.ph)} has no sub-phases yet`,`Sub-phases i), ii)… are smaller steps that build up to this phase's items. You can link each ${esc(sn(c.ph))} item to the sub-phase items that deliver it.`,'＋ Add sub-phase i)',`addGroup('lanes','${c.ph.id}')`)+gCard(c.ph)};
+ return {sel:c.sb.id,allLabel:'All · '+pc(sec(c.sbs.flatMap(g=>g.items))),secs:c.sbs.map(g=>({id:g.id,label:g.name,c:g.color,full:g.items.length&&sec(g.items)>=1,html:()=>gCard(g)})),
+  tail:`<button class="addg" onclick="addGroup('lanes','${c.ph.id}')">＋ New sub-phase ${ROMAN[c.sbs.length]||''}</button>`}}
+function vPhases(){const c=ctx();
+ if(!c.phs.length)return {secs:[],body:emptyCard(c.st.color,`${c.st.name} has no phases yet`,`Phases are the main steps towards ${esc(c.st.name)}'s exit criteria. Add Phase 0 to start, then break phases into sub-phases as they come into focus.`,'＋ Add Phase 0',`addGroup('phases','${c.st.id}')`)+exitCard(c.st)};
+ return {sel:c.ph.id,allLabel:'All · '+pc(sec(c.phs.flatMap(g=>g.items))),secs:c.phs.map(g=>({id:g.id,label:sn(g),c:g.color,full:g.items.length&&sec(g.items)>=1,html:()=>gCard(g)+(ALL.phases?'':subsCard(g))})),
+  tail:`<button class="addg" onclick="addGroup('phases','${c.st.id}')">＋ New phase ${c.phs.length}</button>`}}
+function vStages(){const c=ctx();
+ return {sel:c.st.id,allLabel:'All',secs:S.stages.map(st=>({id:st.id,label:st.name,c:st.color,full:stageExit(st).length&&exitPct(st)>=1,html:()=>exitCard(st)+`<section class="card" style="--c:var(${st.color})"><div class="tag">${esc(st.name)}</div><div class="nm" style="margin-bottom:4px">Phases</div>${phasesOf(st).length?ovRows(phasesOf(st)):'<p class="hint">No phases yet.</p>'}<button class="row add" onclick="addGroup('phases','${st.id}')">＋ Add phase ${phasesOf(st).length}</button></section>`})),
+  tail:`<button class="addg" onclick="addGroup('stages')">＋ New stage</button>`}}
+function vHome(){const c=ctx(),st=c.st;
+ const ex=stageExit(st),dn=ex.filter(x=>prog(x[1])>=1).length,ep=exitPct(st);
+ const hero=`<section class="card hero" style="--c:var(--c0)">${seedOfLife()}${ring(ep,108,'gr')}<div><div class="tag">${esc(st.name)}</div><div class="big">${dn} of ${ex.length}</div><div class="hint">exit criteria met</div><div class="hint" style="margin-top:6px">${c.phs.length} phase${c.phs.length===1?'':'s'} · ${pc(sec(stageItems(st)))} of all items</div></div></section>`;
+ const sum=hero+(c.phs.length?`<section class="card" style="--c:var(--c1)"><div class="tag">${esc(st.name)}</div><div class="nm" style="margin-bottom:4px">Phases</div>${ovRows(c.phs)}</section>`:'')+(c.ph&&c.sbs.length?`<section class="card" style="--c:var(--c0)"><div class="tag">${esc(crumb(c.ph))}</div><div class="nm" style="margin-bottom:4px">Sub-phases</div>${ovRows(c.sbs)}</section>`:'');
+ const nexts=[];c.phs.forEach(p=>{[...subsOf(p),p].forEach(g=>{const i=g.items.find(x=>prog(x)<1);if(i)nexts.push([g,i])})});if(!c.phs.length)st.items.filter(i=>prog(i)<1).slice(0,6).forEach(i=>nexts.push([st,i]));
+ const next=`<section class="card" style="--c:var(--c2)"><div class="tag">${esc(st.name)} · Up next</div><div class="nm" style="margin-bottom:4px">First open item in each group</div>${nexts.length?nexts.map(([g,i])=>row(g,i,true)).join(''):'<div class="empty">Everything is complete.</div>'}</section>`;
  const labs=[];allG().forEach(g=>g.items.forEach(i=>{if(i.type==='money'&&!labs.some(l=>key(l[1].label)===key(i.label)))labs.push([g,i])}));
- const bal=`<section class="card" style="--c:var(--cx)"><div class="tag">Balances</div><div class="nm" style="margin-bottom:4px">Money targets</div>${labs.map(([g,i])=>{const ps=peers(i).map(x=>x[1]).sort((a,b)=>a.target-b.target),nx=ps.find(x=>x.cur<x.target),hit=ps.filter(x=>x.cur>=x.target).length;
+ const bal=`<section class="card" style="--c:var(--cx)"><div class="tag">Balances</div><div class="nm" style="margin-bottom:4px">Money targets</div>${labs.map(([g,i])=>{const ps=peers(i).map(x=>x[1]).sort((a,b)=>a.target-b.target),nx=ps.find(x=>prog(x)<1),hit=ps.filter(x=>prog(x)>=1).length;
   return `<div class="ov" style="--c:var(${g.color})" onclick="moneyI('${g.id}','${i.id}')"><div class="ow"><div class="ot">${esc(i.label)}</div><div class="os">${nx?`Next ${fm(nx.target)}`:'All targets met'} · ${hit}/${ps.length} milestones</div><div class="rb"><i style="width:${(nx?Math.min(i.cur/nx.target,1):1)*100}%;background:var(${g.color})"></i></div></div><b>${fm(i.cur)}</b></div>`}).join('')||'<div class="empty">No money targets yet.</div>'}</section>`;
- return {secs:[{id:'sum',label:'Summary',c:'--c0',html:()=>sum},{id:'next',label:'Up next',c:'--c2',html:()=>next},{id:'bal',label:'Balances',c:'--cx',html:()=>bal}]}}
-function vGroups(kind){const list=S[kind];
- return {allLabel:'All · '+pc(sec(list.flatMap(g=>g.items))),secs:list.map(g=>({id:g.id,label:sn(g),c:g.color,full:g.items.length&&sec(g.items)>=1,html:()=>gCard(g)})),
-  tail:`<button class="addg" onclick="addGroup('${kind}')">＋ New ${kind==='lanes'?'sub-phase':'phase'}</button>`}}
-function checks(){const out=[],p0=S.phases[0],laneItems=S.lanes.flatMap(g=>g.items.map(i=>[g,i])),kids=new Set(Object.values(S.rollup||{}).flat());
- if(p0)p0.items.forEach(i=>{if(i.type==='money'){const ms=laneItems.filter(([g,x])=>x.type==='money'&&key(x.label)===key(i.label));
-   if(!ms.length)out.push(['warn',`Phase 0 "${i.label}" (${fm(i.target)}) has no sub-phase milestone`,p0.id,i.id]);
-   else{const mx=Math.max(...ms.map(m=>m[1].target));if(mx<i.target)out.push(['warn',`Sub-phases only reach ${fm(mx)} for "${i.label}", but Phase 0 needs ${fm(i.target)}`,p0.id,i.id])}}
-  else if(!isRolled(i))out.push(['warn',`Phase 0 "${i.label}" isn't delivered by any sub-phase item`,p0.id,i.id])});
- laneItems.forEach(([g,i])=>{const feeds=i.type==='money'?(p0&&p0.items.some(x=>x.type==='money'&&key(x.label)===key(i.label))):kids.has(i.id);if(!feeds)out.push(['info',`Sub-phase ${g.name} "${i.label}" doesn't feed a Phase 0 item`,g.id,i.id])});
- S.phases.forEach(ph=>{if(ph.items.length&&!ph.items.some(i=>S.exit.includes(i.id)))out.push(['warn',`${sn(ph)} contributes nothing to the Stage 0.0 exit criteria`,ph.id,null])});
- const labs={};[...S.lanes,...S.phases].forEach(g=>g.items.forEach(i=>{if(i.type==='money')(labs[key(i.label)]=labs[key(i.label)]||[]).push([g,i])}));
- for(const k in labs){const a=labs[k];for(let j=1;j<a.length;j++)if(a[j][1].target<a[j-1][1].target)out.push(['info',`"${a[j][1].label}" falls from ${fm(a[j-1][1].target)} (${sn(a[j-1][0])}) to ${fm(a[j][1].target)} (${sn(a[j][0])}). Milestones stay achieved once reached.`,a[j][0].id,a[j][1].id])}
+ const w=checks().filter(x=>x[0]==='warn').length;
+ return {sel:SEC.home||'sum',secs:[{id:'sum',label:'Summary',c:'--c0',html:()=>sum},{id:'next',label:'Up next',c:'--c2',html:()=>next},{id:'bal',label:'Balances',c:'--cx',html:()=>bal},{id:'chk',label:w?`Checks · ${w}`:'Checks',c:w?'--c2':'--c5',full:!w,html:chkCard}]}}
+function checks(){const out=[];
+ S.phases.forEach(ph=>{const sbs=subsOf(ph);if(!sbs.length)return;const li=sbs.flatMap(g=>g.items.map(i=>[g,i]));
+  ph.items.forEach(i=>{if(i.type==='money'){const ms=li.filter(([g,x])=>x.type==='money'&&key(x.label)===key(i.label));
+    if(!ms.length)out.push(['warn',`${crumb(ph)} "${i.label}" (${fm(i.target)}) has no sub-phase milestone`,ph.id,i.id]);
+    else{const mx=Math.max(...ms.map(m=>m[1].target));if(mx<i.target)out.push(['warn',`Sub-phases only reach ${fm(mx)} for "${i.label}", but ${crumb(ph)} needs ${fm(i.target)}`,ph.id,i.id])}}
+   else if(!isRolled(i))out.push(['warn',`${crumb(ph)} "${i.label}" isn't delivered by any of its sub-phase items`,ph.id,i.id])});
+  li.forEach(([g,i])=>{const feeds=i.type==='money'?ph.items.some(x=>x.type==='money'&&key(x.label)===key(i.label)):parentsOf(i.id).some(x=>x[0]===ph);if(!feeds)out.push(['info',`${crumb(g)} "${i.label}" doesn't feed a ${sn(ph)} item`,g.id,i.id])})});
+ S.stages.forEach(st=>phasesOf(st).forEach(ph=>{if(ph.items.length&&!ph.items.some(i=>S.exit.includes(i.id)))out.push(['warn',`${crumb(ph)} contributes nothing to the ${st.name} exit criteria`,ph.id,null])}));
+ const labs={};S.stages.forEach(st=>{phasesOf(st).forEach(p=>[...subsOf(p),p].forEach(g=>g.items.forEach(i=>{if(i.type==='money')(labs[key(i.label)]=labs[key(i.label)]||[]).push([g,i])})))});
+ for(const k in labs){const a=labs[k];for(let j=1;j<a.length;j++)if(a[j][1].target<a[j-1][1].target)out.push(['info',`"${a[j][1].label}" falls from ${fm(a[j-1][1].target)} (${rel(a[j-1][0])}) to ${fm(a[j][1].target)} (${rel(a[j][0])}). Milestones stay achieved once reached.`,a[j][0].id,a[j][1].id])}
  return out}
 function chkCard(){const c=checks(),w=c.filter(x=>x[0]==='warn').length,n=c.length-w;
- return `<section class="card" style="--c:var(${w?'--c2':'--c5'})"><div class="tag">Consistency</div><div class="nm" style="margin-bottom:4px">Checks</div><p class="hint" style="margin-top:2px">${w?`${w} to look at`:'Everything lines up'}${n?` · ${n} note${n>1?'s':''}`:''}. Sub-phases i)–iv) should deliver every Phase 0 item, and every phase should count towards the Stage 0.0 exit criteria.</p>
- ${c.map(([lv,t,gid,iid])=>`<div class="ov" style="--c:var(${lv==='warn'?'--c2':'--c4'})" onclick="${iid?`editI('${gid}','${iid}')`:`jump('phases','${gid}')`}"><span style="font-size:18px;color:var(--c);width:22px;text-align:center">${lv==='warn'?'⚠':'ℹ'}</span><div class="ow"><div class="os" style="color:var(--tx);font-size:14px">${esc(t)}</div></div></div>`).join('')}</section>`}
-function vStages(){
- const ex=exitList(),ep=exitPct();
- const s0=`<section class="card" style="--c:var(--cx)"><div class="ch" style="cursor:default"><div style="flex:1"><div class="tag">Stage 0.0</div><div class="nm">Exit criteria</div></div><span class="p">${pc(ep)}</span></div><div class="bar"><i style="width:${ep*100}%"></i></div>${ex.map(([g,i])=>row(g,i,true)).join('')}<div class="hint" style="margin-top:10px">To add or remove an exit criterion, tap ⋯ on any item and use the "Stage 0.0 exit criterion" switch.</div></section>`;
- return {secs:[{id:'s00',label:'Stage 0.0',c:'--cx',full:ep>=1,html:()=>s0},...S.ctx.map(([n,a],ix)=>({id:'c'+ix,label:n,c:'--c4',html:()=>`<section class="card" style="--c:var(--c4)"><div class="tag">Next stage</div><div class="nm" style="margin-bottom:8px">${esc(n)}</div>${a.map(t=>`<div class="ci">${esc(t)}</div>`).join('')}<button class="row add" onclick="openCtx(${ix})">✎ Edit ${esc(n)}</button></section>`})),
-  (()=>{const w=checks().filter(x=>x[0]==='warn').length;return {id:'chk',label:w?`Checks · ${w}`:'Checks',c:w?'--c2':'--c5',full:!w,html:chkCard}})()]}}
+ return `<section class="card" style="--c:var(${w?'--c2':'--c5'})"><div class="tag">Consistency</div><div class="nm" style="margin-bottom:4px">Checks</div><p class="hint" style="margin-top:2px">${w?`${w} to look at`:'Everything lines up'}${n?` · ${n} note${n>1?'s':''}`:''}. Each phase's sub-phases should deliver its items, and every phase should count towards its stage's exit criteria.</p>
+ ${c.map(([lv,t,gid,iid])=>`<div class="ov" style="--c:var(${lv==='warn'?'--c2':'--c4'})" onclick="${iid?`editI('${gid}','${iid}')`:`goTo('${gid}')`}"><span style="font-size:18px;color:var(--c);width:22px;text-align:center">${lv==='warn'?'⚠':'ℹ'}</span><div class="ow"><div class="os" style="color:var(--tx);font-size:14px">${esc(t)}</div></div></div>`).join('')}</section>`}
 function vMore(){
  const look=`<section class="card" style="--c:var(--c1)"><div class="tag">Appearance</div><div class="nm">Theme</div><div class="themes">${THEMES.map(([k,l,d,bg,tx,sw])=>`<button class="th${ui.theme===k?' on':''}" style="--tbg:${bg};--ttx:${tx}" onclick="setTheme('${k}')"><b>${l}</b><small>${d}</small><span class="sws">${sw.map(c=>`<i style="background:${c}"></i>`).join('')}</span></button>`).join('')}</div>
  <div class="nm" style="margin:18px 0 10px">Background pattern</div><div class="pats">${PATS.map(([k,l])=>`<button class="pt${(ui.pat||'none')===k?' on':''}" onclick="setPat('${k}')">${k==='none'?'<svg viewBox="0 0 60 44"></svg>':patSVG(k,60,44,true)}${l}</button>`).join('')}</div>
@@ -437,47 +493,70 @@ function vMore(){
  <button class="set" onclick="downloadBackup()"><span>Download backup file</span><em>${ba===null?'never':ba===0?'today':ba+'d ago'} ›</em></button>
  <button class="set" onclick="$('fileIn').click()"><span>Restore from backup file</span><em>›</em></button>
  <button class="set" onclick="openData()"><span>Paste / copy backup text</span><em>›</em></button>
- <button class="set" onclick="openTitle()"><span>Title & subtitle</span><em>›</em></button>
+ <button class="set" onclick="openTitle()"><span>App title</span><em>›</em></button>
  <div class="hint" style="padding:10px 4px">Everything is stored on this phone only. Download a backup now and then (to Drive or email it to yourself). You can paste data exported from the old Stage 0.0 console under "Paste / copy backup text".</div></section>`;
- return {secs:[{id:'look',label:'Appearance',c:'--c1',html:()=>look},{id:'data',label:'Data',c:'--mu',html:()=>data}]}}
+ return {sel:SEC.more||'look',secs:[{id:'look',label:'Appearance',c:'--c1',html:()=>look},{id:'data',label:'Data',c:'--mu',html:()=>data}]}}
 
 const TABS=[['lanes','Sub-phases','<path d="M4 18h4v-4h4v-4h4V6h4"/>'],
  ['phases','Phases','<path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/>'],
  ['stages','Stages','<path d="M5 21V4"/><path d="M5 4h11l-2 4 2 4H5"/>'],
  ['home','Overview','<circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/>'],
  ['more','More','<circle cx="5" cy="12" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="19" cy="12" r="1.3"/>']];
-const VIEWS={home:vHome,lanes:()=>vGroups('lanes'),phases:()=>vGroups('phases'),stages:vStages,more:vMore};
+const VIEWS={lanes:vLanes,phases:vPhases,stages:vStages,home:vHome,more:vMore};
 const SEC={};
+function crumbsHTML(){const v=ui.view;if(v==='more')return '';const c=ctx();
+ const parts=[['stages',c.st.name]];
+ if(v==='phases'||v==='lanes')parts.push(['phases',ALL.phases&&v==='phases'?'All phases':c.ph?sn(c.ph):'No phases']);
+ if(v==='lanes'&&c.ph)parts.push(['lanes',ALL.lanes?'All sub-phases':c.sb?c.sb.name:'No sub-phases']);
+ if(v==='stages'&&ALL.stages)parts[0][1]='All stages';
+ if(v==='home')return `<button class="cr" onclick="pick('stages')">${esc(c.st.name)} ▾</button><span class="csep">overview</span>`;
+ return parts.map(([lv,l],ix)=>`${ix?'<span class="csep">›</span>':''}<button class="cr${lv===v?' on':''}" onclick="pick('${lv}')">${esc(l)} ▾</button>`).join('')}
 function render(anim){
- if(!VIEWS[ui.view])ui.view='home';
- $('ttl').textContent=S.title||'Stage 0';$('stl').textContent=S.subtitle||'';
+ if(!VIEWS[ui.view])ui.view='lanes';
+ $('ttl').textContent=S.title||'Minimum Viable Foundations';$('crumbs').innerHTML=crumbsHTML();
  $('tabs').innerHTML=TABS.map(([k,l,ic])=>`<button class="tab${ui.view===k?' on':''}" onclick="setView('${k}')"><span class="pb"><svg viewBox="0 0 24 24">${ic}</svg></span>${l}</button>`).join('');
- const V=VIEWS[ui.view]();let cur=SEC[ui.view];if(!cur||(cur!=='all'&&!V.secs.some(x=>x.id===cur)))cur=V.secs.length?V.secs[0].id:'all';
+ const V=VIEWS[ui.view]();const lvl=['stages','phases','lanes'].includes(ui.view);
+ let cur=lvl&&ALL[ui.view]?'all':(V.sel||(V.secs[0]&&V.secs[0].id)||'all');
  const st=$('stabs');
- if(V.secs.length>1){st.style.display='';
+ if(V.secs.length){st.style.display='';
   const curS=V.secs.find(x=>x.id===cur);st.style.setProperty('--ac',`var(${curS?curS.c:'--cx'})`);
-  st.innerHTML=[...V.secs,{id:'all',label:V.allLabel||'All',c:'--cx',all:1}].map(x=>`<button class="st${x.id===cur?' on':''}${x.all?' all':''}" style="--c:var(${x.c})" onclick="setSec('${x.id}')">${x.all?'':`<i class="${x.full?'full':''}"></i>`}${esc(x.label)}</button>`).join('')}
- else{st.style.display='none';cur='all'}
- single=cur!=='all';
- const body=single?V.secs.find(x=>x.id===cur).html():V.secs.map(x=>x.html()).join('')+(V.tail||'');
- single=false;
+  st.innerHTML=[...V.secs,...(V.secs.length>1?[{id:'all',label:V.allLabel||'All',c:'--cx',all:1}]:[])].map(x=>`<button class="st${x.id===cur?' on':''}${x.all?' all':''}" style="--c:var(${x.c})" onclick="setSec('${x.id}')">${x.all?'':`<i class="${x.full?'full':''}"></i>`}${esc(x.label)}</button>`).join('')}
+ else{st.style.display='none';st.innerHTML=''}
+ const body=V.body!=null?V.body:cur==='all'?V.secs.map(x=>x.html()).join('')+(V.tail||''):(V.secs.find(x=>x.id===cur)||V.secs[0]).html();
  $('main').innerHTML=`<div class="view ${anim||''}">${body}</div>`;
  const on=st.querySelector('.st.on');if(on&&st.style.display!=='none'){const tgt=on.offsetLeft-st.clientWidth/2+on.clientWidth/2;st.scrollTo({left:Math.max(0,tgt),behavior:anim==='sec'?'smooth':'auto'})}
  popId=null}
 
 /* ---------- actions ---------- */
-function setSec(id){if(SEC[ui.view]===id){scrollTo({top:0,behavior:'smooth'});return}SEC[ui.view]=id;render('sec');scrollTo(0,0)}
+function setSec(id){const v=ui.view;
+ if(['stages','phases','lanes'].includes(v)){if(id==='all'){if(ALL[v]){scrollTo({top:0,behavior:'smooth'});return}ALL[v]=true}
+  else{const was=!ALL[v]&&(v==='stages'?ui.st:v==='phases'?ui.ph:ui.sb)===id;ALL[v]=false;if(was){scrollTo({top:0,behavior:'smooth'});return}
+   if(v==='stages')ui.st=id;else if(v==='phases')ui.ph=id;else ui.sb=id}}
+ else{if(SEC[v]===id){scrollTo({top:0,behavior:'smooth'});return}SEC[v]=id}
+ render('sec');scrollTo(0,0)}
 function setView(v){if(v===ui.view){scrollTo({top:0,behavior:'smooth'});return}ui.view=v;saveUI();render();scrollTo(0,0)}
-function jump(view,gid){ui.view=view;SEC[view]=gid;saveUI();render();scrollTo(0,0)}
+function pick(level){const c=ctx(),list=level==='stages'?S.stages:level==='phases'?c.phs:c.sbs,curId=level==='stages'?c.st.id:level==='phases'?c.ph&&c.ph.id:c.sb&&c.sb.id;
+ const head=level==='stages'?'Stages':level==='phases'?`${c.st.name} · Phases`:`${c.ph?crumb(c.ph):''} · Sub-phases`;
+ show(`<div class="tag">Go to</div><h3>${esc(head)}</h3>${list.map(g=>{const p=sec(level==='stages'?stageExit(g).map(x=>x[1]):g.items);return `<div class="ov" style="--c:var(${g.color})" onclick="choose('${level}','${g.id}')"><div class="ow"><div class="ot">${esc(level==='lanes'?g.name:sn(g))}${g.id===curId?' <span class="badge">viewing</span>':''} <span class="os">· ${esc(g.sub||'')}</span></div><div class="rb"><i style="width:${p*100}%;background:var(${g.color})"></i></div></div><b>${pc(p)}</b></div>`}).join('')||'<p class="hint">None yet.</p>'}
+ <div class="btns" style="margin-top:14px">${level!=='stages'||true?`<button class="bb g" style="flex:1" onclick="addGroup('${level}','${level==='stages'?'':level==='phases'?c.st.id:c.ph?c.ph.id:''}')">＋ New ${levelName[level].toLowerCase()}</button>`:''}<button class="bb" style="flex:1" onclick="closeM()">Done</button></div>`,'--cx')}
+// Choosing from a breadcrumb changes the context and keeps you on the current screen where that makes sense.
+function choose(level,gid){const g=grp(gid);ALL[level]=false;
+ if(level==='stages'){ui.st=gid;ui.ph=null;ui.sb=null}else if(level==='phases'){ui.ph=gid;ui.sb=null}else ui.sb=gid;
+ const order=['stages','phases','lanes'];if(!['stages','phases','lanes'].includes(ui.view)||order.indexOf(ui.view)<order.indexOf(level))ui.view=level;
+ closeM()}
 function tapI(gid,iid){const it=itemOf(gid,iid);if(it.type==='money')return moneyI(gid,iid);if(isRolled(it))return partsI(gid,iid);toggleDone(it);render()}
 function partsI(gid,iid){const g=grp(gid),it=itemOf(gid,iid),k=kidsOf(it);
- show(`<div class="tag">${esc(sn(g))}</div><h3>${esc(it.label)}</h3><p class="hint">Ticks itself when all of these sub-phase items are done. Tap one to tick it here.</p>${k.map(([kg,ki])=>{const d=prog(ki)>=1;return `<div class="row ${d?'d':''}" style="--c:var(${kg.color})" onclick="${ki.type==='money'?`moneyI('${kg.id}','${ki.id}')`:`toggleDone(itemOf('${kg.id}','${ki.id}'));partsI('${gid}','${iid}');render()`}"><span class="ck"></span><div class="lbw"><div class="lb">${esc(ki.label)}</div><div class="meta"><span class="gtag" style="--c:var(${kg.color})">Sub-phase ${esc(kg.name)}</span></div></div></div>`}).join('')}
+ show(`<div class="tag">${esc(crumb(g))}</div><h3>${esc(it.label)}</h3><p class="hint">Ticks itself when all of these sub-phase items are done. Tap one to tick it here.</p>${k.map(([kg,ki])=>{const d=prog(ki)>=1;return `<div class="row ${d?'d':''}" style="--c:var(${kg.color})" onclick="${ki.type==='money'?`moneyI('${kg.id}','${ki.id}')`:`toggleDone(itemOf('${kg.id}','${ki.id}'));partsI('${gid}','${iid}');render()`}"><span class="ck"></span><div class="lbw"><div class="lb">${esc(ki.label)}</div><div class="meta"><span class="gtag" style="--c:var(${kg.color})">Sub-phase ${esc(kg.name)}</span></div></div></div>`}).join('')}
  <div class="btns" style="margin-top:16px"><button class="bb g" onclick="editI('${gid}','${iid}')">Change links</button><button class="bb" style="flex:1" onclick="closeM()">Done</button></div>`,g.color)}
 let sx0=null;
 $('main').addEventListener('touchstart',e=>{const t=e.target;if(t.closest('input,textarea,.seg,.stabs,.pats,.themes')){sx0=null;return}sx0=[e.touches[0].clientX,e.touches[0].clientY]},{passive:true});
 $('main').addEventListener('touchend',e=>{if(!sx0)return;const t=e.changedTouches[0],dx=t.clientX-sx0[0],dy=t.clientY-sx0[1];sx0=null;if(Math.abs(dx)>70&&Math.abs(dx)>2*Math.abs(dy))swipeSec(dx<0?1:-1)},{passive:true});
-function swipeSec(d){const V=VIEWS[ui.view]();if(V.secs.length<2)return;const ids=[...V.secs.map(x=>x.id),'all'];let cur=SEC[ui.view]||ids[0];let i=ids.indexOf(cur)+d;if(i<0||i>=ids.length)return;SEC[ui.view]=ids[i];render(d>0?'sL':'sR');scrollTo(0,0)}
+function swipeSec(d){const V=VIEWS[ui.view]();if(V.secs.length<2)return;const ids=[...V.secs.map(x=>x.id),'all'];const lvl=['stages','phases','lanes'].includes(ui.view);
+ let cur=lvl&&ALL[ui.view]?'all':(V.sel||ids[0]);let i=ids.indexOf(cur)+d;if(i<0||i>=ids.length)return;
+ const id=ids[i];if(lvl){if(id==='all')ALL[ui.view]=true;else{ALL[ui.view]=false;if(ui.view==='stages')ui.st=id;else if(ui.view==='phases')ui.ph=id;else ui.sb=id}}else SEC[ui.view]=id;
+ render(d>0?'sL':'sR');scrollTo(0,0)}
 let rz;addEventListener('resize',()=>{clearTimeout(rz);rz=setTimeout(drawPat,250)});
+
 
 /* ---------- sheets ---------- */
 function show(h,c){if(!$('sh').classList.contains('on')){try{history.pushState({sheet:1},'')}catch(e){}}const s=$('sh');s.style.setProperty('--c',`var(${c||'--c0'})`);s.innerHTML='<div class="grab"></div>'+h;s.scrollTop=0;s.classList.add('on');$('bd').classList.add('on')}
@@ -498,21 +577,22 @@ function moneyI(gid,iid){const g=grp(gid),it=itemOf(gid,iid),ps=peers(it).sort((
  <h4>Milestones${ps.length>1?' · balance shared across these':''}</h4><div id="msl">${msList(ps)}</div>${histSVG(it.label)}
  ${it.note?`<p class="hint">${esc(it.note)}</p>`:''}
  <div class="btns" style="margin-top:16px"><button class="bb g" onclick="editI('${gid}','${iid}')">Edit item</button><button class="bb" style="flex:1" onclick="closeM()">Done</button></div>`,g.color)}
-function msList(ps){return ps.map(([g,i])=>{const rd=S.reached[i.id],ok=!!rd||i.cur>=i.target;return `<div class="ms" style="--c:var(${g.color})"><span class="ok${ok?' y':''}">${ok?'✓':''}</span><span>${esc(sn(g))} <span class="hint">· ${esc(g.sub)}</span></span><em>${fm(i.target)}${rd?` · reached ${short(rd)}`:ok?'':` · ${fm(i.target-i.cur)} to go`}</em></div>`}).join('')}
+function msList(ps){return ps.map(([g,i])=>{const rd=S.reached[i.id],ok=!!rd||i.cur>=i.target;return `<div class="ms" style="--c:var(${g.color})"><span class="ok${ok?' y':''}">${ok?'✓':''}</span><span>${esc(crumb(g))} <span class="hint">· ${esc(g.sub||'')}</span></span><em>${fm(i.target)}${rd?` · reached ${short(rd)}`:ok?'':` · ${fm(i.target-i.cur)} to go`}</em></div>`}).join('')}
 function refreshMoney(gid,iid){const it=itemOf(gid,iid);$('bv').value=+it.cur||'';$('msl').innerHTML=msList(peers(it).sort((a,b)=>a[1].target-b[1].target))}
 function stepBal(gid,iid,d){const it=itemOf(gid,iid);setBal(it.label,(+it.cur||0)+d);if(d>0)buzz();refreshMoney(gid,iid)}
 
-function editI(gid,iid){const g=grp(gid),it=itemOf(gid,iid),ex=S.exit.includes(iid);
+function editI(gid,iid){const g=grp(gid),it=itemOf(gid,iid),ex=S.exit.includes(iid),k=kindOf(g),st=stageOf(g);
  const others=allG().filter(x=>x.id!==gid);
- show(`<div class="tag">${esc(g.name)}</div><h3>Edit item</h3><input type="text" value="${esc(it.label)}" onchange="setIt('${gid}','${iid}','label',this.value)">
+ const subItems=k==='phases'?subsOf(g).flatMap(lg=>lg.items.filter(x=>x.type!=='money').map(x=>[lg,x])):[];
+ show(`<div class="tag">${esc(crumb(g))}</div><h3>Edit item</h3><input type="text" value="${esc(it.label)}" onchange="setIt('${gid}','${iid}','label',this.value)">
  <div class="fr"><label>Type</label><select onchange="chType('${gid}','${iid}',this.value)"><option value="check"${it.type==='check'?' selected':''}>Tick when done</option><option value="money"${it.type==='money'?' selected':''}>Money target</option></select></div>
  ${it.type==='money'?`<div class="fr"><label>Target (£)</label><input type="number" min="1" value="${it.target}" onchange="setIt('${gid}','${iid}','target',+this.value||1)"></div><p class="hint">Money items with the same name share one balance, so updating "${esc(it.label)}" anywhere updates every milestone for it.</p>`:''}
  ${it.type==='money'&&S.reached[iid]?`<div class="fr"><label>Milestone reached ${short(S.reached[iid])}</label><button class="bb g" onclick="delete S.reached['${iid}'];latch();save();editI('${gid}','${iid}')">Reset</button></div>`:''}
- <label class="tgl"><span>Stage 0.0 exit criterion</span><input type="checkbox" ${ex?'checked':''} onchange="setExit('${iid}',this.checked)"></label>
- ${it.type!=='money'&&S.phases.includes(g)?`<h4>Delivered by sub-phase items</h4><p class="hint" style="margin-top:0">Ticked items here make "${esc(it.label)}" tick itself once they're all done.</p>${S.lanes.flatMap(lg=>lg.items.filter(x=>x.type!=='money').map(x=>`<label class="tgl" style="--c:var(${lg.color})"><span><span class="gtag">${esc(lg.name)}</span> ${esc(x.label)}</span><input type="checkbox" ${((S.rollup||{})[iid]||[]).includes(x.id)?'checked':''} onchange="setRoll('${iid}','${x.id}',this.checked)"></label>`)).join('')}`:''}
- ${S.lanes.includes(g)&&parentsOf(iid).length?`<p class="hint">Feeds into Phase 0: ${esc(parentsOf(iid).map(x=>x[1].label).join(', '))}</p>`:''}
+ ${k==='stages'?`<p class="hint">This is one of ${esc(st.name)}'s own exit criteria.</p>`:`<label class="tgl"><span>${esc(st.name)} exit criterion</span><input type="checkbox" ${ex?'checked':''} onchange="setExit('${iid}',this.checked)"></label>`}
+ ${it.type!=='money'&&k==='phases'?(subItems.length?`<h4>Delivered by sub-phase items</h4><p class="hint" style="margin-top:0">Ticked items here make "${esc(it.label)}" tick itself once they're all done.</p>${subItems.map(([lg,x])=>`<label class="tgl" style="--c:var(${lg.color})"><span><span class="gtag">${esc(lg.name)}</span> ${esc(x.label)}</span><input type="checkbox" ${((S.rollup||{})[iid]||[]).includes(x.id)?'checked':''} onchange="setRoll('${iid}','${x.id}',this.checked)"></label>`).join('')}`:`<p class="hint">Once ${esc(sn(g))} has sub-phases, you can link this item to the sub-phase items that deliver it.</p>`):''}
+ ${k==='lanes'&&parentsOf(iid).length?`<p class="hint">Feeds into ${esc(sn(parentPh(g)||g))}: ${esc(parentsOf(iid).map(x=>x[1].label).join(', '))}</p>`:''}
  <h4>Context & notes</h4><textarea placeholder="Detail, blockers, Plane board link…" onchange="setIt('${gid}','${iid}','note',this.value)">${esc(it.note||'')}</textarea>
- <h4>Arrange</h4><div class="btns"><button class="bb g" onclick="mvI('${gid}','${iid}',-1)">Move up</button><button class="bb g" onclick="mvI('${gid}','${iid}',1)">Move down</button><select onchange="if(this.value)moveTo('${gid}','${iid}',this.value)"><option value="">Move to…</option>${others.map(o=>`<option value="${o.id}">${esc(o.name)} · ${esc(o.sub)}</option>`).join('')}</select></div>
+ <h4>Arrange</h4><div class="btns"><button class="bb g" onclick="mvI('${gid}','${iid}',-1)">Move up</button><button class="bb g" onclick="mvI('${gid}','${iid}',1)">Move down</button><select onchange="if(this.value)moveTo('${gid}','${iid}',this.value)"><option value="">Move to…</option>${others.map(o=>`<option value="${o.id}">${esc(crumb(o))}${o.sub?' · '+esc(o.sub):''}</option>`).join('')}</select></div>
  <div class="btns"><button class="bb dg" onclick="arm(this,()=>delI('${gid}','${iid}'))">Delete item</button></div>${DONE}`,g.color)}
 function setIt(gid,iid,f,v){itemOf(gid,iid)[f]=v;if(f==='target'){delete S.reached[iid];latch()}save()}
 function setRoll(p,c,on){S.rollup=S.rollup||{};const a=(S.rollup[p]||[]).filter(x=>x!==c);if(on)a.push(c);if(a.length)S.rollup[p]=a;else delete S.rollup[p];save()}
@@ -520,23 +600,35 @@ function chType(gid,iid,t){const it=itemOf(gid,iid);it.type=t;if(t==='money'){it
 function setExit(iid,on){S.exit=S.exit.filter(x=>x!==iid);if(on)S.exit.push(iid);save();toast(on?'Added to exit criteria':'Removed from exit criteria')}
 function mvI(gid,iid,d){const g=grp(gid),i=g.items.findIndex(x=>x.id===iid),j=i+d;if(j<0||j>=g.items.length)return;[g.items[i],g.items[j]]=[g.items[j],g.items[i]];save();toast(d<0?'Moved up':'Moved down')}
 function moveTo(gid,iid,to){const g=grp(gid),it=itemOf(gid,iid);g.items=g.items.filter(x=>x.id!==iid);grp(to).items.push(it);save();closeM()}
-function delI(gid,iid){const g=grp(gid);g.items=g.items.filter(x=>x.id!==iid);S.exit=S.exit.filter(x=>x!==iid);delete S.rollup[iid];for(const p in S.rollup){S.rollup[p]=S.rollup[p].filter(x=>x!==iid);if(!S.rollup[p].length)delete S.rollup[p]}delete S.reached[iid];save();closeM()}
+function dropIds(ids){S.exit=S.exit.filter(x=>!ids.includes(x));ids.forEach(id=>{delete S.rollup[id];delete S.reached[id]});for(const p in S.rollup){S.rollup[p]=S.rollup[p].filter(x=>!ids.includes(x));if(!S.rollup[p].length)delete S.rollup[p]}}
+function delI(gid,iid){const g=grp(gid);g.items=g.items.filter(x=>x.id!==iid);dropIds([iid]);save();closeM()}
 
-function openGroup(gid){const g=grp(gid),kind=kindOf(g);
- show(`<div class="tag">${esc(g.name)}</div><h3>${esc(g.sub)}</h3>
- <h4>Add item</h4><input type="text" id="nl" placeholder="e.g. Dental check-up booked" onkeydown="if(event.key==='Enter')addI('${gid}')"><div class="btns"><input type="number" id="nt" placeholder="£ target (optional)" style="flex:1"><button class="bb" onclick="addI('${gid}')">Add</button></div>
- <h4>Name & subtitle</h4><input type="text" value="${esc(g.name)}" onchange="grp('${gid}').name=this.value;save()"><div style="height:8px"></div><input type="text" value="${esc(g.sub)}" onchange="grp('${gid}').sub=this.value;save()">
+function openGroup(gid){const g=grp(gid),kind=kindOf(g),L=levelName[kind].toLowerCase();
+ const kids=kind==='stages'?phasesOf(g):kind==='phases'?subsOf(g):[];
+ show(`<div class="tag">${esc(crumb(g))}</div><h3>${esc(g.sub||levelName[kind])}</h3>
+ <h4>${kind==='stages'?'Add exit criterion':'Add item'}</h4><input type="text" id="nl" placeholder="${kind==='stages'?'e.g. >£10k net in the past month':'e.g. Dental check-up booked'}" onkeydown="if(event.key==='Enter')addI('${gid}')"><div class="btns"><input type="number" id="nt" placeholder="£ target (optional)" style="flex:1"><button class="bb" onclick="addI('${gid}')">Add</button></div>
+ <h4>Name & description</h4><input type="text" value="${esc(g.name)}" onchange="grp('${gid}').name=this.value;save()"><div style="height:8px"></div><input type="text" placeholder="Short description" value="${esc(g.sub||'')}" onchange="grp('${gid}').sub=this.value;save()">
  <h4>Colour</h4><div class="sw">${COLORS.map(c=>`<button class="${g.color===c?'on':''}" style="background:var(${c})" aria-label="Colour" onclick="grp('${gid}').color='${c}';save();openGroup('${gid}')"></button>`).join('')}</div>
- <h4>Arrange</h4><div class="btns"><button class="bb g" onclick="mvG('${gid}',-1)">Move earlier</button><button class="bb g" onclick="mvG('${gid}',1)">Move later</button><button class="bb dg" onclick="arm(this,()=>delG('${gid}'))">Delete ${kind==='lanes'?'sub-phase':'phase'}</button></div>${DONE}`,g.color);
+ <h4>Arrange</h4><div class="btns"><button class="bb g" onclick="mvG('${gid}',-1)">Move earlier</button><button class="bb g" onclick="mvG('${gid}',1)">Move later</button><button class="bb dg" onclick="arm(this,()=>delG('${gid}'))">Delete ${L}${kids.length?` and its ${kind==='stages'?'phases':'sub-phases'}`:''}</button></div>${DONE}`,g.color);
  setTimeout(()=>{const e=$('nl');e&&e.focus()},60)}
-function addI(gid){const g=grp(gid),l=$('nl').value.trim();if(!l)return;const t=+$('nt').value;g.items.push(t>0?M(nid(),l,t):G(nid(),l));
- if(t>0){const p=peers(g.items[g.items.length-1]).find(x=>x[1]!==g.items[g.items.length-1]);if(p)g.items[g.items.length-1].cur=p[1].cur}
+function addI(gid){const g=grp(gid),l=$('nl').value.trim();if(!l)return;const t=+$('nt').value;const it=t>0?M(nid(),l,t):G(nid(),l);g.items.push(it);
+ if(t>0){const p=peers(it).find(x=>x[1]!==it);if(p)it.cur=p[1].cur;latch()}
  save();toast('Added: '+l);$('nl').value='';$('nt').value='';$('nl').focus()}
-function mvG(gid,d){const g=grp(gid),a=S[kindOf(g)],i=a.indexOf(g),j=i+d;if(j<0||j>=a.length)return;[a[i],a[j]]=[a[j],a[i]];save();toast(d<0?'Moved earlier':'Moved later')}
-function delG(gid){const g=grp(gid),k=kindOf(g);const ids=g.items.map(i=>i.id);S[k]=S[k].filter(x=>x!==g);S.exit=S.exit.filter(x=>!ids.includes(x));save();closeM()}
-function addGroup(kind){const list=S[kind],n=list.length;const g={id:'g'+nid(),color:COLORS[n%7],name:kind==='lanes'?['i)','ii)','iii)','iv)','v)','vi)','vii)','viii)'][n]||`${n+1})`:`Stage 0.0 – Phase ${n}`,sub:'New',items:[]};list.push(g);save();SEC[kind]=g.id;openGroup(g.id)}
-function openCtx(ix){const c=S.ctx[ix];show(`<div class="tag">Next stage</div><h3>${esc(c[0])}</h3><h4>Name</h4><input type="text" id="cn" value="${esc(c[0])}"><h4>Entries · one per line</h4><textarea id="ct" style="min-height:200px">${esc(c[1].join('\n'))}</textarea><div class="btns" style="margin-top:14px"><button class="bb" style="flex:1" onclick="S.ctx[${ix}][0]=$('cn').value.trim()||S.ctx[${ix}][0];S.ctx[${ix}][1]=$('ct').value.split('\\n').map(t=>t.trim()).filter(Boolean);save();closeM()">Save</button><button class="bb g" onclick="closeM()">Cancel</button></div>`,'--c4')}
-function openTitle(){show(`<h3>Title & subtitle</h3><input type="text" id="t1" value="${esc(S.title||'')}"><div style="height:8px"></div><input type="text" id="t2" value="${esc(S.subtitle||'')}"><div class="btns" style="margin-top:14px"><button class="bb" style="flex:1" onclick="S.title=$('t1').value.trim()||'Stage 0';S.subtitle=$('t2').value.trim();save();closeM()">Save</button></div>`,'--c1')}
+function mvG(gid,d){const g=grp(gid),k=kindOf(g),arr=S[k],sb=sibs(g),i=sb.indexOf(g),o=sb[i+d];if(!o)return;const ia=arr.indexOf(g),ib=arr.indexOf(o);[arr[ia],arr[ib]]=[arr[ib],arr[ia]];save();toast(d<0?'Moved earlier':'Moved later')}
+function delG(gid){const g=grp(gid),k=kindOf(g);let gone=[g];
+ if(k==='stages'){const phs=phasesOf(g);gone=gone.concat(phs,phs.flatMap(subsOf))}else if(k==='phases')gone=gone.concat(subsOf(g));
+ dropIds(gone.flatMap(x=>x.items.map(i=>i.id)));
+ S.stages=S.stages.filter(x=>!gone.includes(x));S.phases=S.phases.filter(x=>!gone.includes(x));S.lanes=S.lanes.filter(x=>!gone.includes(x));
+ if(!S.stages.length)S.stages.push({id:'s'+nid(),name:'Stage 0.0',sub:'',color:'--cx',items:[]});
+ save();closeM()}
+function addGroup(kind,parent){const c=ctx();let g;
+ if(kind==='stages'){const n=S.stages.length;g={id:'s'+nid(),name:`Stage 0.${n}`,sub:'',color:['--cx','--c4','--c1','--c6','--c5'][n%5],items:[]};S.stages.push(g)}
+ else if(kind==='phases'){const st=grp(parent)||c.st,n=phasesOf(st).length;g={id:'p'+nid(),stage:st.id,name:`Phase ${n}`,sub:'',color:COLORS[n%7],items:[]};S.phases.push(g)}
+ else{const ph=grp(parent)||c.ph;if(!ph)return;const n=subsOf(ph).length;g={id:'l'+nid(),phase:ph.id,name:ROMAN[n]||`${n+1})`,sub:'',color:COLORS[n%7],items:[]};S.lanes.push(g)}
+ save();toast(`Added ${crumb(g)}`);goTo(g.id);openGroup(g.id)}
+function openTitle(){show(`<h3>App title</h3><input type="text" id="t1" value="${esc(S.title||'')}"><div class="btns" style="margin-top:14px"><button class="bb" style="flex:1" onclick="S.title=$('t1').value.trim()||'Minimum Viable Foundations';save();closeM()">Save</button></div>`,'--c1')}
+
+
 
 /* ---------- backup ---------- */
 function lastBackup(){try{return localStorage.getItem('stage0-lastbackup')}catch(e){return null}}

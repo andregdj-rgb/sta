@@ -1,7 +1,7 @@
 {
-  "name": "Stage 0",
-  "short_name": "Stage 0",
-  "description": "Stage 0 \u00b7 Minimum Viable Foundations tracker.",
+  "name": "Minimum Viable Foundations",
+  "short_name": "Foundations",
+  "description": "Minimum Viable Foundations: stages, phases and sub-phases tracker.",
   "id": "./",
   "start_url": "./",
   "scope": "./",

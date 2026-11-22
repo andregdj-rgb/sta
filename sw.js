@@ -1,5 +1,5 @@
 // Bump VERSION whenever any file changes, so phones pick up the update.
-const VERSION = 'stage0-v3';
+const VERSION = 'stage0-v4';
 const FILES = ['./', './index.html', './manifest.webmanifest',
   './icons/icon.svg', './icons/icon-192.png', './icons/icon-512.png',
   './icons/icon-maskable-192.png', './icons/icon-maskable-512.png',

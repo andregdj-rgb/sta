@@ -1,4 +1,4 @@
-# Stage 0
+# Minimum Viable Foundations (repo: sta)
 
 Installable app (PWA) for tracking Stage 0 · Minimum Viable Foundations: sub-phases, phases, money milestones and stage exit criteria.
 Everything is stored on the phone only.
